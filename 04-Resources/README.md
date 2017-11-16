@@ -15,7 +15,7 @@ de um pedaço do sistema.*
 
 Parece complicado, mas é mais facil que isso.
 
-Um recuroso tem uma função especifica e vai nos ajduar a implementar uma configuração.
+Um resource tem uma função especifica e vai nos ajudar a implementar uma configuração.
 
 A syntax de um recuroso geralmente é:
 ```
