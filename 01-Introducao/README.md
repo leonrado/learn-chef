@@ -15,6 +15,7 @@ infraestrutura como um codigo (IaC) é o conceito de transformar a configuraçã
  - Versionar
  - Reutilizar
  - Testar
- com isso ganhamos mais VELOCIDADE na implementações e mais SEGURANÇA pois o codigo antes de ser implementado, pode ser testado.
+
+ Com isso ganhamos mais VELOCIDADE na implementações e mais SEGURANÇA pois o codigo antes de ser implementado, pode ser testado.
 
  # Tecnologias do Chef
