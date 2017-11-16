@@ -1,3 +1,3 @@
-file '/tmp/motd' do
+file '/tmp/hello' do
   content 'hello world'
 end
