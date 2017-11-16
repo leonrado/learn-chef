@@ -1,2 +1,3 @@
-# learn-chef
-Curso de Chef for Dummies
+__O que é Chef__
+
+![Chef Logo](chef-logo.png)
