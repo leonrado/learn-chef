@@ -4,9 +4,9 @@
 
 Forme nossas receitas vão crecendo de tamanho e ficando mais complexa, para falicitar o gerenciamento, vamos organizar-las em cookbooks
 
-#1. Criando Cookbook
+# 1. Criando Cookbook
 
-Vaos criar um cookbook que instala um Servidor Web:
+## Missão: Criar um cookbook que instala um Servidor Web:
 
 Dentro do nosso diretorio chef-repo, vamos criar um diretorio para armanezar os
 nossos cookbooks:
