@@ -19,3 +19,14 @@ infraestrutura como um codigo (IaC) é o conceito de transformar a configuraçã
  Com isso ganhamos mais VELOCIDADE na implementações e mais SEGURANÇA pois o codigo antes de ser implementado, pode ser testado.
 
  # Tecnologias do Chef
+
+- Chef é uma ferramenta Open source e tem uma versão Enterprise com alguns poucos recursos a mais e suporte.
+- Chef é escrito em Ruby
+- Chef usa pure-Ruby, domain-specific language (DSL) para escrever as "receitas"
+- Chef é uma ferramenta de linha de comando
+- Chef é baseado em uma arquitetura Client-Servidor
+
+# Concorrentes
+ - Puppet
+ - Ansible
+ - Saltstack
