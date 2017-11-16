@@ -65,7 +65,7 @@ Esse commando vai gerar uma estrutura de diretórios assim:
 7 directories, 8 files
 ```
 
-# 2 Criando a Receita
+# 2 Criando Receita
 
 Vamos criar uma receita fazer os seguintes passos:
 
@@ -95,4 +95,70 @@ file '/var/www/html/index.html' do
   </body>
 </html>'
 end
+```
+
+Não ficou legal colocar o conteudo do nosso site todo usando esse recurso chamado
+file. Vamos usar outro recurso chamado template e colocar o index em um arquivo separado:
+
+# 3 Criado um template
+
+Para separar o arquivo vamos criar um template usando novamente o comando "chef generate":
+
+```
+chef generate template index.html
+```
+Isso vai criar um diretorio chamado templates e um arquivo chamado index.html.erb
+Vamos colocar o conteudo do nosso site nesse arquivo:
+```
+<html>
+  <body>
+    <h1>hello world</h1>
+  </body>
+</html>
+```
+
+E adicionar esse recurso em nossa receita, de forma que nosso arquivo install_web_server.rb
+fique com esse conteudo:
+```
+package 'httpd'
+
+service 'httpd' do
+  action [:enable, :start]
+end
+
+template '/var/www/html/index.html' do
+  source 'index.html.erb'
+end
+```
+
+Pronto agora vamos rodar a nossa receita localmente usando o comando:
+```
+sudo chef-client --local-mode --runlist 'recipe[install_web_server]'
+```
+Isso vai gerar uma saida parecida com essa:
+```
+Starting Chef Client, version 13.4.19
+resolving cookbooks for run list: ["install_web_server"]
+Synchronizing Cookbooks:
+  - learn_chef_httpd (0.1.0)
+Installing Cookbook Gems:
+Compiling Cookbooks...
+Converging 3 resources
+Recipe: learn_chef_httpd::default
+  * yum_package[httpd] action install (up to date)
+  * service[httpd] action enable (up to date)
+  * service[httpd] action start (up to date)
+  * template[/var/www/html/index.html] action create
+    - update content in file /var/www/html/index.html from 2914aa to ef4ffd
+    (no diff)
+    - restore selinux security context
+
+Running handlers:
+Running handlers complete
+Chef Client finished, 1/4 resources updated in 03 seconds
+```
+
+Pronto temos um Web Server instalado, vamos testar se tudo esta ok:
+```
+curl localhost
 ```
