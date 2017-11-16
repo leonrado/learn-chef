@@ -64,3 +64,35 @@ Esse commando vai gerar uma estrutura de diretórios assim:
 
 7 directories, 8 files
 ```
+
+# 2 Criando a Receita
+
+Vamos criar uma receita fazer os seguintes passos:
+
+1. Instalar o pacote o httpd
+2. Startar o o serviço de httpd
+3. Criar nosso index.html
+
+Para isso vamos criar uma receita chamada install_web_server usando o "chef generate"
+precisamos rodar esse comando de dentro do diretorio raiz do nosos Cookbook
+```
+cd cookbooks/learn_chef_httpd/
+chef generate recipe install_web_server
+```
+Isso vai criar um arquivo chamado install_web_server.rb dentro do diretorio recipes
+Vamos adicionar o seguinte codigo no seu conteudo:
+```
+package 'httpd'
+
+service 'httpd' do
+  action [:enable, :start]
+end
+
+file '/var/www/html/index.html' do
+  content '<html>
+  <body>
+    <h1>hello world</h1>
+  </body>
+</html>'
+end
+```
