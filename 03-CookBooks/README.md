@@ -131,9 +131,11 @@ template '/var/www/html/index.html' do
 end
 ```
 
-Pronto agora vamos rodar a nossa receita localmente usando o comando:
+# 4 Rodando...
+
+Vamos rodar a nossa receita localmente usando o comando:
 ```
-sudo chef-client --local-mode --runlist 'recipe[install_web_server]'
+sudo chef-client --local-mode --runlist 'learn_chef_httpd::install_web_server'
 ```
 Isso vai gerar uma saida parecida com essa:
 ```
