@@ -5,7 +5,7 @@ __Instalação do Chef DK__
 Para começar a brincar com o chef vamos precisar primeiro instalar o
 ChefDK (development kit) e criar nossa primeira receita.
 
-Para instalar o ChefDK no Windows:
+Para instalar o ChefDK no ~~Ruindows~~ Windows:
 ```
 . { iwr -useb https://omnitruck.chef.io/install.ps1 } | iex; install -project chefdk -channel stable -version 0.16.28
 ```
